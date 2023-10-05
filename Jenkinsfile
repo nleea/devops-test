@@ -70,6 +70,11 @@ pipeline{
         }
 
         stage("Build & Push Docker Image") {
+
+            steps{
+                sh "sudo su"
+            }
+
             steps {
                 script {
                     docker.withRegistry('',DOCKER_PASS) {
