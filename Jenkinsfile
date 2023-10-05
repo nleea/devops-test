@@ -59,7 +59,6 @@ pipeline{
 
         }
 
-// test
 
         stage("Quality Gate") {
             steps {
