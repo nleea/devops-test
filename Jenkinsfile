@@ -69,12 +69,6 @@ pipeline{
 
         }
 
-        stage("sudo"){
-            steps {
-                sh "sudo su"
-            }
-        }
-
         stage("Build & Push Docker Image") {
 
             steps {
