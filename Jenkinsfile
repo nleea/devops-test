@@ -6,7 +6,7 @@ pipeline{
         jdk 'Java17'
         maven 'Maven3'
     }
-    
+    // sqa_53a986230af6cbde6fc15b0a27f72d6ddee1fe0b
     // environment {
     //     APP_NAME = "complete-prodcution-e2e-pipeline"
     //     RELEASE = "1.0.0"
@@ -46,16 +46,16 @@ pipeline{
             }
         }
 
-        // stage("Sonarqube Analysis") {
-        //     steps {
-        //         script {
-        //             withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
-        //                 sh "mvn sonar:sonar"
-        //             }
-        //         }
-        //     }
+        stage("Sonarqube Analysis") {
+            steps {
+                script {
+                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                        sh "mvn sonar:sonar"
+                    }
+                }
+            }
 
-        // }
+        }
 
         // stage("Quality Gate") {
         //     steps {
